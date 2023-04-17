@@ -8,19 +8,10 @@ get_url() {
   local arch=$2
   local version=$3
 
-  local url=""
-
-  if [ "master" = "$version" ]; then
-    url=$( \
-      curl -s $BASE_URL \
-      | sed -n 's/"tarball": "\(.*\/builds\/.*zig-'"$platform"'-'"$arch"'-[0-9\.]*.*\)",/\1/p' \
-    )
-  else
-    url=$( \
-      curl -s $BASE_URL \
-      | sed -n 's/"tarball": "\(.*\/download\/.*zig-'"$platform"'-'"$arch"'-'"$version"'\.tar.*\)",/\1/p' \
-    )
-  fi
+  local url=url=$( \
+    curl -s $BASE_URL \
+    | sed -n 's/"tarball": "\(.*\/\(download\|builds\)\/.*zig-'"$platform"'-'"$arch"'-'"$version"'\.tar.*\)",/\1/p' \
+  )  
 
   echo -n $url
 }
