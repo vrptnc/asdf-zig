@@ -19,4 +19,4 @@ get_versions() {
   echo -n $versions
 }
 
-echo $(get_versions) master
+echo $(get_versions)
