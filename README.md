@@ -6,7 +6,7 @@
 ## Install
 
 ```
-asdf plugin-add zig https://github.com/cheetah/asdf-zig.git
+asdf plugin-add zig https://github.com/vrptnc/asdf-zig.git
 ```
 
 ## Use
